@@ -17,6 +17,7 @@
     --h3-font: 2rem;
     --h4-font: 1.5rem;
     --h5-font: 1.4rem;
+    --h6-font: 1.3rem;
     --p-font: 1rem;
     --a-font: 1.2rem;
 }
@@ -126,7 +127,7 @@ header.sticky{
 
 .about{
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
     /*  2sütun 1fr, 50%, 50% - 3 sütun, 1fr , %33.33, %33.33, %33.33
     /* 2fr 4fr 4fr gibi bir tanılama sunduysak, bunun bize çıktısı, 
     20%(2birim) 40%(4 birim) 40%(4 birim) */
@@ -189,7 +190,8 @@ header.sticky{
 
 .services-content{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
     align-items: center;
     text-align: center;
     gap: 1.5rem;
@@ -221,4 +223,78 @@ header.sticky{
 
 .box:hover h3{
     color: var(--primary-color);
+}
+
+.portfolio-content{
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    text-align: center;
+    gap: 1.5rem;
+    margin-top: 4rem;  
+      
+}
+
+.portfolio-box-text{
+    color: var(--primary-color);
+    font-size: var(--h6-font);
+    text-align: left;
+    padding-bottom: 12px;
+    padding-left: 8px;
+}
+
+.portfolio-box h3{    
+    font-size: var(--h6-font);
+    text-align: left;
+    padding-bottom: 12px;
+    padding-left: 8px;
+}
+
+portfolio-box{    
+    background:#1f2129 ;
+    padding: 40px;
+    border-top: 5px solid transparent;
+    border-radius: 0.8rem; 
+}
+
+.portfolio-box img{
+    width: 250px;
+    height: auto;
+    padding-bottom: 12px;
+}
+
+@media (min-width: 320px) and (max-width: 425px){
+    :root{
+        --h1-font:4rem;
+        --h2-font:2.5rem;
+        --h5-font:1.2rem;
+        --p-font: 0,8rem;
+    }
+}
+
+@media (min-width: 425px) and (max-width:768px){
+    .navbar a{
+        display: block;
+        margin: 1rem;
+        padding: 1rem;
+    }
+    :root{
+        --h1-font:4.5rem;
+        --h2-font:2.8rem;
+    }
+    section{
+        padding: 100px 15% 90px;
+    }
+}
+
+@media (min-width: 768px) and (max-width:1440px){
+    
+    :root{
+        --h1-font:4.8rem;
+        --h2-font:3rem;
+    }
+    section{
+        padding: 120px 10% 90px;
+    }
 }
